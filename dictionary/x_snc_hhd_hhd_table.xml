@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="HHD Table" max_length="40" name="x_snc_hhd_hhd_table" type="collection">
+        <element label="Active Until" max_length="40" name="u_active" type="glide_date"/>
+        <element display="true" label="HHD Identifier" max_length="20" name="u_hhd_identifier" type="string"/>
+        <element label="Prototype Evenagelist" max_length="32" name="u_prototype_evangelist" reference="sys_user" type="reference"/>
+        <element choice="1" label="State" max_length="40" name="u_state" type="choice">
+            <choice>
+                <element label="In Maintenance" sequence="1" value="10"/>
+                <element label="In Stock" sequence="2" value="6"/>
+                <element label="In Transit" sequence="3" value="9"/>
+                <element label="In Use" sequence="4" value="1"/>
+                <element label="Missing" sequence="5" value="8"/>
+                <element label="On Order" sequence="6" value="2"/>
+                <element label="Retired" sequence="7" value="7"/>
+            </choice>
+        </element>
+        <element label="System Name" max_length="25" name="u_system_name" type="string"/>
+        <element label="Unlock Code" max_length="10" name="u_unlock_code" type="string"/>
+        <index name="index">
+            <element name="u_prototype_evangelist"/>
+        </index>
+    </element>
+</database>
